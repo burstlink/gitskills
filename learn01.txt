@@ -1,0 +1,83 @@
+[python]
+pip install -r requirements.txt
+set http_proxy=http://10.167.196.133:8080
+set https_proxy=http://10.167.196.133:8080
+pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple --proxy  http://10.167.196.133:8080 virtualenv
+
+
+[git]
+生成密钥
+ssh-keygen -t rsa -C "xx.xx@cn.xx.com" 
+ssh-keygen -t rsa -C "xx@gmail.com" -f id_rsa_git
+
+多个账户：
+vim config
+Host github
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile C:\\Users\\liyy.fnst\\.ssh\\id_rsa_git
+User liyy453180905@gmail.com
+
+# xxx
+Host git.xx.cn.xx.com
+HostName git.xx.cn.xx.com
+PreferredAuthentications publickey
+IdentityFile C:\\Users\\xx.xx\\.ssh\\id_rsa
+User xx.xx@cn.xx.com
+
+
+git config --global http.proxy http://10.167.196.133:8080
+git config --global https.proxy http://10.167.196.133:8080
+
+[pycharm]
+ctrl+g  弹出一个框，输入要跳的行数
+ctrl+home  光标移到第一行
+ctrl+end 光标移到最后一行
+
+
+[linux]
+
+vim搜索高亮 set hlsearch
+
+
+[django]
+django
+
+[docker]
+
+查看运行中的docker：docker ps -a
+
+docker_mysql数据库登录：
+ cd .local/share/tutor/env/apps/mysql
+ cat auth.env
+ MYSQL_ROOT_PASSWORD=jQfV8O8U#    jQfV8O8U
+ docker exec -u root -it tutor_local_mysql_1 bash
+ mysql -u root -p
+
+docker logs
+docker logs tutor_local_lms_1
+
+安装vim
+ apt-get update
+ apt-get install vim
+
+[mysql]
+table表模糊查找
+show tables like 'user%';
+查看表结构
+desc table_name;
+table有对少行
+select count(*) from table_name;
+查看数据表
+select *from user_tasks_usertaskstatus limit 0,1;
+倒叙查表
+select *from completion_blockcompletion order by created  DESC  limit 10;
+查询table表里面的包含的某一项
+SELECT  * FROM  information_schema.COLUMNS  WHERE  COLUMN_NAME='email';
+跟新数据
+UPDATE auth_user SET is_active=1 WHERE username='liyy';
+
+
+[openstack]
+source  /etc/kolla/admin-openrc.sh
+
