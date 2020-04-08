@@ -9,6 +9,8 @@ pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple --proxy  http://10.167.
 生成密钥
 ssh-keygen -t rsa -C "xx.xx@cn.xx.com" 
 ssh-keygen -t rsa -C "xx@gmail.com" -f id_rsa_git
+本地新分支推送远端
+git push origin feature-branch:feature-branch
 
 多个账户：
 vim config
